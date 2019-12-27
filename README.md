@@ -73,7 +73,7 @@ ionic generate page pages/summary
 npm test
 ````
 
-![Screen shot Chrome browser of npm test](ionic4_start_blank_a5_npm_test_2019-12-27.png)
+![Screen shot Chrome browser of npm test](doc/ionic4_start_blank_a5_npm_test_2019-12-27.png)
 
 
 The generated code is in the src directory and has to be configured. Such as for example changeing the header of the pages files (home page excluded) to
