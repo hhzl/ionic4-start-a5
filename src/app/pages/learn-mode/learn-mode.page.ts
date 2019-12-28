@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BoxOfQuestionsService } from '../../services/box-of-questions.service';
+
 
 @Component({
   selector: 'app-learn-mode',
