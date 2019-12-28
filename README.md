@@ -56,6 +56,7 @@ npm test
 ionic generate service services/BoxOfQuestions
 ionic generate service services/LWdb
 ionic generate service services/Data
+ionic generate service services/Settings
 
 npm test
 

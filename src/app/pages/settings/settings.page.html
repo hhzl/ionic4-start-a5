@@ -6,6 +6,20 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+
+<ion-content class="ion-padding">
+
+<!-- languageArray index starts with 0  -->
+
+<h3>{{this.settings.language[1]}}</h3>  
+<ion-button  (click)="setLanguage(1)">language 2</ion-button>
+
+<h3>{{this.settings.language[2]}}</h3>  
+<ion-button  (click)="setLanguage(2)">language 3</ion-button>
+
+<p>
+<ion-checkbox checked disabled></ion-checkbox> Include pictures with no label 
+</p>
+
 
 </ion-content>
