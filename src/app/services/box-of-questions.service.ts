@@ -98,7 +98,7 @@ export class BoxOfQuestionsService {
 
 
 
-  // randomize as called _shuffle before
+  // randomize was called _shuffle before
   _randomize(arr : Array<any>) {
 		    var j, x, i;
 		    for (i = arr.length; i; i--) {
