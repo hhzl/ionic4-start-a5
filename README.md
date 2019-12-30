@@ -64,6 +64,7 @@ ionic generate page pages/choose-mode
 ionic generate page pages/choose-mode-m
 ionic generate page pages/learn-mode
 ionic generate page pages/learn-mode-m
+ionic generate page pages/picture-with-labels
 ionic generate page pages/practice-mode
 ionic generate page pages/wordlist
 ionic generate page pages/about
@@ -123,5 +124,21 @@ Android environment setup: https://ionicframework.com/docs/installation/android,
 Build apk file with
 
     ionic cordova run android
+
+
+## Note about testing
+
+To make 'should create' tests work for pages
+````
+import { RouterTestingModule } from '@angular/router/testing';
+````
+has to be imported and then used in
+````
+imports: [IonicModule.forRoot(),RouterTestingModule]
+````
+
+
+
+
 
 

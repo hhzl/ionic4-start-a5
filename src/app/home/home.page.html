@@ -5,7 +5,7 @@
             <ion-icon name="information-circle"></ion-icon>
         </ion-button>
     </ion-buttons>
-    <ion-title>Ionic 4 start a5</ion-title>
+    <ion-title>{{this.service.settings.maintitle}}</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -14,14 +14,15 @@
 
 <ion-img src="/assets/shapes.svg"></ion-img>
 
-<h1>English - {{this.service.language[1]}} - {{this.service.language[2]}}</h1>
+<h1>{{this.service.getLanguageList()}}</h1>
 
 
-<ion-button routerLink="/choose-mode" routerDirection="forward" expand="block" size="large">choose mode</ion-button>
+<ion-button routerLink="/picture-with-labels" routerDirection="forward" expand="block" size="large">Open</ion-button>
 
 </div>
 
 </ion-content>
+
 
 <ion-footer>
 <ion-toolbar color="primary">

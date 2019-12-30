@@ -44,6 +44,10 @@ const routes: Routes = [
     path: 'summary',
     loadChildren: () => import('./pages/summary/summary.module').then( m => m.SummaryPageModule)
   },
+  {
+    path: 'picture-with-labels',
+    loadChildren: () => import('./pages/picture-with-labels/picture-with-labels.module').then( m => m.PictureWithLabelsPageModule)
+  },
 ];
 
 @NgModule({

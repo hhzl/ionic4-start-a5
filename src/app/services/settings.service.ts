@@ -1,60 +1,35 @@
 import { Injectable } from '@angular/core';
+import { LWdbService } from './lwdb.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class SettingsService {
 
   private selectedLanguageNo : number = 2;
-  public selectedLanguage : string;
-  public useThirdLanguage = false;
+  public selectedLanguage : string = 'English';
 
-  public language : Array<string> = ['English','French','Italian',''];
-  public languageAbreviation : Array<string> = ['en','fr','it',''];
- 
-
-  constructor() { 
-    // check the following...
-    var lang : string;
+  public settings : any;
+  lwdb : LWdbService;
 
 
-    if (localStorage.getItem('a5-useThirdLanguage')==null){
-        localStorage.setItem('a5-useThirdLanguage',JSON.stringify(this.useThirdLanguage));
-     } else {
-     this.useThirdLanguage = JSON.parse(localStorage.getItem('a5-useThirdLanguage'));
-     }
 
 
-    if (localStorage.getItem('a5-language1')==null){
-        localStorage.setItem('a5-language1',JSON.stringify(this.language[1]));
-     } else {
-     lang = JSON.parse(localStorage.getItem('a5-language1'));
-     this.setSelectedLanguageNo(1);
-     this.setSelectedLanguage(lang) 
-     }
-
-     if (localStorage.getItem('a5-language2')==null){
-        localStorage.setItem('a5-language2',JSON.stringify(this.language[2]));
-     } else {
-     lang = JSON.parse(localStorage.getItem('a5-language2'));
-     this.setSelectedLanguageNo(2);
-     this.setSelectedLanguage(lang) 
-     }
-
-
+  constructor(l : LWdbService) { 
+         this.lwdb = l;
+         this.settings = this.lwdb.getSettings();
 }
 
 
- setUseThirdLanguage(b : boolean) {
-    this.useThirdLanguage = b;
-    localStorage.setItem('a5-useThirdLanguage',JSON.stringify(b));
 
-    console.log('settings.service useThirdLanguage was set to: ' + this.useThirdLanguage);
+ setUseThirdLanguage(b : boolean) {
+    this.settings.useThirdLanguage = b;
+    this.lwdb.putSettings(this.settings)
+    console.log('settings.service useThirdLanguage was set to: ' + this.settings.useThirdLanguage);
 
   }
-
-
-
 
 
 
@@ -62,31 +37,44 @@ export class SettingsService {
     // determines which of the languages will be set by the next call to
     // setSelectedLangauge(lang)
     this.selectedLanguageNo = n;
-    this.selectedLanguage = this.language[n];
+    if (n == 1) {this.selectedLanguage = this.settings.language1};
+    if (n == 2) {this.selectedLanguage = this.settings.language2};
+    if (n == 3) {this.selectedLanguage = this.settings.language3};
     console.log('settings.service setSelectedLanguage: ' + n + ' ' + this.selectedLanguage);
   }
+
 
 
   setSelectedLanguage(lang) {
     console.log('settings.service setSelectedLanguage');
     this.selectedLanguage = lang;
 
-    this.language[this.selectedLanguageNo] = lang; 
-    this.languageAbreviation[this.selectedLanguageNo] = this.getSelectedLanguageAbbreviation(); 
-    localStorage.setItem('a5-language'+this.selectedLanguageNo,JSON.stringify(lang));
+    if (this.selectedLanguageNo == 1) {this.settings.language1 = lang};
+    if (this.selectedLanguageNo == 2) {this.settings.language2 = lang};
+    if (this.selectedLanguageNo == 3) {this.settings.language3 = lang};
+ 
+    this.lwdb.putSettings(this.settings);
 
-    console.log('settings.service language was set to: ' + lang + '; language: ' +this.language);
+    console.log('settings.service language was set to: ' + lang + '; language: ' +this.selectedLanguage);
 
   }
 
 
 
+public getLanguageList() {
+   var list = this.settings.language1;
+   list += ' - ' + this.settings.language2;
+   if (this.settings.useThirdLanguage) {list += ' - ' + this.settings.language3};
+   return list;
+}
 
 
-   getSelectedLanguageAbbreviation() {
-    if (this.selectedLanguage == 'French') {return 'fr'}
-    if (this.selectedLanguage == 'German') {return 'ge'}
-    if (this.selectedLanguage == 'Italian') {return 'it'}
+
+
+public getLanguageAbreviation(lang) {
+    if (lang == 'French') {return 'fr'}
+    if (lang == 'German') {return 'ge'}
+    if (lang == 'Italian') {return 'it'}
 
     return null; 
 

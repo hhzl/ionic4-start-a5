@@ -11,9 +11,9 @@ import { SettingsService } from '../services/settings.service';
 export class HomePage {
   service : SettingsService;
 
-
   constructor(settings: SettingsService) {
                    this.service = settings;
+                   console.log('home.page constructor - settings made available');
   }
 
 }

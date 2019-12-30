@@ -11,13 +11,13 @@ import { NavController } from '@ionic/angular';
 export class SettingsPage implements OnInit {
 
  navCtrl: NavController; 
- settings: SettingsService;
+ service: SettingsService;
  useThirdLanguageCheckBox = false;
 
  constructor(n: NavController, s: SettingsService) {
      this.navCtrl = n;
-     this.settings = s;
-     this.useThirdLanguageCheckBox = this.settings.useThirdLanguage;
+     this.service = s;
+     this.useThirdLanguageCheckBox = this.service.settings.useThirdLanguage;
      console.log('constructor settings-page this.useThirdLanguageCheckBox =' + this.useThirdLanguageCheckBox);
 
  }
@@ -27,15 +27,15 @@ export class SettingsPage implements OnInit {
 
  setLanguage(n) {
   console.log('settings.page: setLanguage '+ n + ' (one less)');
-  this.settings.setSelectedLanguageNo(n);
-  console.log('settings.page: selectedLanguage: ' + this.settings.selectedLanguage);
+  this.service.setSelectedLanguageNo(n);
+  console.log('settings.page: selectedLanguage: ' + this.service.selectedLanguage);
   this.navCtrl.navigateForward('/language-selection')
  }
 
 
  useThirdLanguage(e): void {
   	console.log('settings-page ' + e.currentTarget.checked);	
-        this.settings.setUseThirdLanguage(e.currentTarget.checked);
+        this.service.setUseThirdLanguage(e.currentTarget.checked);
         this.useThirdLanguageCheckBox = e.currentTarget.checked;
  }
 

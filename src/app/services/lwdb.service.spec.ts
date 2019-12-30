@@ -1,3 +1,7 @@
+// Instructions how to configure running tests
+// https://blog.oldcomputerjunk.net/2019/ng7-selective-karma/
+
+
 import { TestBed } from '@angular/core/testing';
 
 import { LWdbService } from './lwdb.service';

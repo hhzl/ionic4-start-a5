@@ -13,28 +13,28 @@ describe('SettingsService', () => {
   it('should have English as default', () => {
     const service: SettingsService = TestBed.get(SettingsService);
     expect(service).toBeTruthy();
-    expect(service.language[0]).toBe('English');
+    expect(service.settings.language1).toBe('English');
   });
 
-  it('should be possible to set language number 1', () => {
+  it('should be possible to set language number 2', () => {
     const service: SettingsService = TestBed.get(SettingsService);
-    let oldValue = service.language[1];
+    let oldValue = service.settings.language2;
 
-    service.setSelectedLanguageNo(1);
+    service.setSelectedLanguageNo(2);
     service.setSelectedLanguage('German');
-    expect(service.language[1]).toBe('German');
+    expect(service.settings.language2).toBe('German');
 
     service.setSelectedLanguage(oldValue);
   });
 
 
-  it('should be possible to set language number 2', () => {
+  it('should be possible to set language number 3', () => {
     const service: SettingsService = TestBed.get(SettingsService);
-    let oldValue = service.language[2];
+    let oldValue = service.settings.language3;
 
-    service.setSelectedLanguageNo(2);
-    service.setSelectedLanguage('French');
-    expect(service.language[2]).toBe('French');
+    service.setSelectedLanguageNo(3);
+    service.setSelectedLanguage('Chinese');
+    expect(service.settings.language3).toBe('Chinese');
 
     service.setSelectedLanguage(oldValue);
   });
