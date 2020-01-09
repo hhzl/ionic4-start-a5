@@ -1,17 +1,19 @@
 # Screen shots mobile phone app
 
-![Screen shot Home Page](doc/HomePage_ 2020-01-09.png)
+## Home page
+![Screen shot Home Page](doc/HomePage_2020-01-09.png)
 
+## Choose ABC page
 ![Screen shot Choose ABC Page](doc/ChooseABCPage 2020-01-09.png)
 
+## Picture with labels page
 ![Screen shot Picture with Labels Page](doc/Picture_with_Labels_Page_2020-01-09.png)
 
+## Settings page
 ![Screen shot Settings Page](doc/SettingsPage_2020-01-09.png)
 
+## Language selection page
 ![Screen shot Language Selection Page](doc/LanguageSelection2_2020-01-09.png)
-
-
-LanguageSelection2_2020-01-09.png
 
 
 # INSTALLATION OF TOOLS
