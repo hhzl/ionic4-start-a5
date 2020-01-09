@@ -4,7 +4,7 @@
 ![Screen shot Home Page](doc/HomePage_2020-01-09.png)
 
 ## Choose ABC page
-![Screen shot Choose ABC Page](doc/ChooseABCPage 2020-01-09.png)
+![Screen shot Choose ABC Page](doc/ChooseABCPage_2020-01-09.png)
 
 ## Picture with labels page
 ![Screen shot Picture with Labels Page](doc/Picture_with_Labels_Page_2020-01-09.png)
