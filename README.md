@@ -1,3 +1,19 @@
+# Screen shots mobile phone app
+
+![Screen shot Home Page](doc/HomePage_ 2020-01-09.png)
+
+![Screen shot Choose ABC Page](doc/ChooseABCPage 2020-01-09.png)
+
+![Screen shot Picture with Labels Page](doc/Picture_with_Labels_Page_2020-01-09.png)
+
+![Screen shot Settings Page](doc/SettingsPage_2020-01-09.png)
+
+![Screen shot Language Selection Page](doc/LanguageSelection2_2020-01-09.png)
+
+
+LanguageSelection2_2020-01-09.png
+
+
 # INSTALLATION OF TOOLS
 
 Make sure the [Node.js and npm](https://nodejs.org/en/) are installed.
@@ -62,6 +78,7 @@ npm test
 
 ionic generate page pages/choose-mode
 ionic generate page pages/choose-mode-m
+ionic generate page pages/choose-abc
 ionic generate page pages/learn-mode
 ionic generate page pages/learn-mode-m
 ionic generate page pages/picture-with-labels
@@ -70,12 +87,14 @@ ionic generate page pages/wordlist
 ionic generate page pages/about
 ionic generate page pages/settings
 ionic generate page pages/languageSelection
+ionic generate page pages/languageSelection2
 ionic generate page pages/summary
  
 npm test
 ````
 
 ![Screen shot Chrome browser of npm test](doc/ionic4_start_blank_a5_npm_test_2019-12-27.png)
+
 
 
 The generated code is in the src directory and has to be configured. Such as for example changeing the header of the pages files (home page excluded) to
@@ -101,7 +120,7 @@ The header of the page home.page.html is
             <ion-icon name="information-circle"></ion-icon>
         </ion-button>
     </ion-buttons>
-    <ion-title>Ionic 4 start a4</ion-title>
+    <ion-title>Ionic 4 start a5</ion-title>
     </ion-toolbar>
 </ion-header>
 ````

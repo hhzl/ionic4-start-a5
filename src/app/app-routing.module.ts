@@ -48,6 +48,14 @@ const routes: Routes = [
     path: 'picture-with-labels',
     loadChildren: () => import('./pages/picture-with-labels/picture-with-labels.module').then( m => m.PictureWithLabelsPageModule)
   },
+  {
+    path: 'choose-abc',
+    loadChildren: () => import('./pages/choose-abc/choose-abc.module').then( m => m.ChooseAbcPageModule)
+  },
+  {
+    path: 'language-selection2',
+    loadChildren: () => import('./pages/language-selection2/language-selection2.module').then( m => m.LanguageSelection2PageModule)
+  },
 ];
 
 @NgModule({

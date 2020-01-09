@@ -36,13 +36,6 @@ export class BoxOfQuestionsService {
 
 
 
-  getWords() {
-    // use getSelectedItems() instead
-    return this.getSelectedItems();
-  }
-
-
-
   getSelectedItems() {
     return this.selectedItems;
   }
@@ -69,6 +62,14 @@ export class BoxOfQuestionsService {
     if (this.selectedIndex == -1) {this.selectedIndex = n -1};
     return this.currentItem(); 
   }
+
+
+  setSelectedIndex(n : number) {
+    this.selectedIndex = n;
+  }
+
+
+
 
 
 

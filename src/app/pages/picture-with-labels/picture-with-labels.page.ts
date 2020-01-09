@@ -47,41 +47,47 @@ export class PictureWithLabelsPage implements OnInit {
 
 
  displayWord(item){
- // this method needs to be adapted for other data formats.
- // detect the format and adapt.
-
-       this.word = item.word;
+ 
        this.wordId = item._id;
+       this.translate3 = '';
+
+      // detect the format and adapt.
+       if (item.en) {// second type of word object data format
+                     this.displayWord2(item)
+                    }
+       else {this.word = item.word;
+           if (this.service.settings.language2 == 'French' ) { 
+           this.translate = item.translateFR;
+           }
+
+           if (this.service.settings.language2 == 'Italian' ) { 
+           this.translate = item.translateIT;
+           }
+
+           if (this.service.settings.language2 == 'German' ) { 
+           this.translate = item.translate;  // not translateGE
+           }
+
+      
+           if (this.service.settings.useThirdLanguage) { 
+
+           if (this.service.settings.language3 == 'French' ) { 
+           this.translate3 = item.translateFR;
+           }
+
+           if (this.service.settings.language3 == 'Italian' ) { 
+           this.translate3 = item.translateIT;
+           }
+
+           if (this.service.settings.language3 == 'German' ) { 
+           this.translate3 = item.translate;  // not translateGE
+           }
+          }
+       };
+
+
        console.log('picture-with-labels.page : displayWord = ' + this.word);
 
-       if (this.service.settings.language2 == 'French' ) { 
-           this.translate = item.translateFR;
-       }
-
-       if (this.service.settings.language2 == 'Italian' ) { 
-           this.translate = item.translateIT;
-       }
-
-       if (this.service.settings.language2 == 'German' ) { 
-           this.translate = item.translate;  // not translateGE
-       }
-
-       this.translate3 = '';
-      
-       if (this.service.settings.useThirdLanguage) { 
-
-       if (this.service.settings.language3 == 'French' ) { 
-           this.translate3 = item.translateFR;
-       }
-
-       if (this.service.settings.language3 == 'Italian' ) { 
-           this.translate3 = item.translateIT;
-       }
-
-       if (this.service.settings.language3 == 'German' ) { 
-           this.translate3 = item.translate;  // not translateGE
-       }
-       }
 
        this.itemImageFileName = item.picture;
        console.log(this.itemImageFileName);
@@ -93,8 +99,24 @@ export class PictureWithLabelsPage implements OnInit {
   }
 
 
+displayWord2(item){
+    // adapt to display second data type for words (generalized, assuming language codes
+    // on the word item object
+
+    this.word = item.en;
+    var langAbrev : string;
+
+    langAbrev = this.service.getLanguageAbreviation(this.service.settings.language2);
+
+    this.translate = item[langAbrev];
+
+    if (this.service.settings.useThirdLanguage) { 
+       langAbrev = this.service.getLanguageAbreviation(this.service.settings.language3);
+       this.translate3 = item[langAbrev];
+    }
 
 
+}
 
 
 nextWord() {

@@ -29,7 +29,7 @@ export class SettingsPage implements OnInit {
   console.log('settings.page: setLanguage '+ n + ' (one less)');
   this.service.setSelectedLanguageNo(n);
   console.log('settings.page: selectedLanguage: ' + this.service.selectedLanguage);
-  this.navCtrl.navigateForward('/language-selection')
+  this.navCtrl.navigateForward('/language-selection2')
  }
 
 
