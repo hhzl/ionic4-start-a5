@@ -22,7 +22,7 @@ describe('BoxOfQuestionsService', () => {
 
 
 
-  it('Items should have properties _id and tags', () => {
+  it('Items should have propertiy "_id"', () => {
     const service: BoxOfQuestionsService = TestBed.get(BoxOfQuestionsService);
     var min = 0;
     var max = service.getSelectedItems().length -1;
@@ -30,30 +30,23 @@ describe('BoxOfQuestionsService', () => {
     var item = service.getSelectedItems()[i];
 
     expect(item._id).toBeTruthy();
+  });
+
+
+
+
+  it('Items should have a property "tags"', () => {
+    const service: BoxOfQuestionsService = TestBed.get(BoxOfQuestionsService);
+    var min = 0;
+    var max = service.getSelectedItems().length -1;
+    var i = Math.floor(Math.random() * (max - min + 1)) + min;
+    var item = service.getSelectedItems()[i];
+
     expect(item.tags).toBeTruthy();
   });
 
 
-  it('should allow to navigate around the items limit.', () => {
-    const service: BoxOfQuestionsService = TestBed.get(BoxOfQuestionsService);
-    service.nextItem();
-    service.nextItem();
-    var item = service.currentItem();
 
-    expect(service.getSelectedItems().length).toBe(6);
-
-    service.prevItem();
-    service.prevItem();
-    service.prevItem();
-    service.prevItem();
-    service.prevItem();
-    service.prevItem();
-
-    var item2 = service.currentItem();
-    expect(item._id == item2._id).toBeTruthy();
-
-
-  });
 
 
 
@@ -68,6 +61,28 @@ describe('BoxOfQuestionsService', () => {
 
     service.prevItem();
     service.prevItem();
+
+    var item2 = service.currentItem();
+    expect(item._id == item2._id).toBeTruthy();
+
+
+  });
+
+
+
+  it('should allow to navigate around the items limit.', () => {
+    const service: BoxOfQuestionsService = TestBed.get(BoxOfQuestionsService);
+    service.nextItem();
+    service.nextItem();
+    var item = service.currentItem();
+
+    let numberOfItems = service.getSelectedItems().length;
+
+
+    for (let i = 0; i < numberOfItems; i++) {
+        service.prevItem();
+    };
+
 
     var item2 = service.currentItem();
     expect(item._id == item2._id).toBeTruthy();
