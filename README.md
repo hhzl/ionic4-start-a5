@@ -20,6 +20,8 @@
 
 Make sure the [Node.js and npm](https://nodejs.org/en/) are installed.
 
+Then install ionic and cordova from the command line with:
+
     npm install -g ionic
 
     npm install -g cordova
@@ -50,7 +52,9 @@ System:
    OS     : Linux 4.15
 ````
 
-# SETUP 
+# SETUP OF APPLICATION
+
+Assuming git is installed
 
     git clone https://github.com/hhzl/ionic4-start-a5.git
 
@@ -60,8 +64,19 @@ System:
 
     npm test
 
+Otherwise download https://github.com/hhzl/ionic4-start-a5/archive/master.zip und unzip. Then
 
-# SCAFFOLDING
+    cd ionic5-start-a5
+
+    npm install
+
+    npm test
+
+This shows the tests. See below how to run the app locally in a browser.
+
+
+
+# HOW SCAFFOLDING WAS DONE
 
 The scaffolding of the code in the repository was done with
 
@@ -94,6 +109,8 @@ ionic generate page pages/summary
  
 npm test
 ````
+
+
 
 ![Screen shot Chrome browser of npm test](doc/ionic4_start_blank_a5_npm_test_2019-12-27.png)
 
