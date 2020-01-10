@@ -52,7 +52,7 @@ System:
    OS     : Linux 4.15
 ````
 
-# SETUP OF APPLICATION
+# SETUP OF DEVELOPMENT AND TEST ENVIRONMENT FOR THE APPLICATION
 
 Assuming git is installed
 
@@ -72,8 +72,19 @@ Otherwise download https://github.com/hhzl/ionic4-start-a5/archive/master.zip un
 
     npm test
 
-This shows the tests. See below how to run the app locally in a browser.
+This shows the tests. 
 
+![Screen shot Chrome browser of npm test](doc/ionic4_start_blank_a5_npm_test_2020-01-10.png)
+
+See below how to run the app locally in a browser.
+
+
+# RUN THE APP IN THE BROWSER
+To run the application in a web browser execute on the command line
+
+    ionic serve
+
+The use the indicated local web address such as http://localhost:8100 .
 
 
 # HOW SCAFFOLDING WAS DONE
@@ -84,14 +95,12 @@ The scaffolding of the code in the repository was done with
 ionic start ionic4-start-a5 blank --type=angular
 cd ionic4-start-a5
 
-npm test
 
 ionic generate service services/BoxOfQuestions
 ionic generate service services/LWdb
 ionic generate service services/Data
 ionic generate service services/Settings
 
-npm test
 
 ionic generate page pages/choose-mode
 ionic generate page pages/choose-mode-m
@@ -107,13 +116,7 @@ ionic generate page pages/languageSelection
 ionic generate page pages/languageSelection2
 ionic generate page pages/summary
  
-npm test
 ````
-
-
-
-![Screen shot Chrome browser of npm test](doc/ionic4_start_blank_a5_npm_test_2019-12-27.png)
-
 
 
 The generated code is in the src directory and has to be configured. Such as for example changeing the header of the pages files (home page excluded) to
@@ -147,11 +150,6 @@ The header of the page home.page.html is
 
 
 
-# RUN THE APP IN THE BROWSER
-
-    ionic serve
-
-
 # RUN THE APP ON THE DEVICE
 
    
@@ -174,9 +172,4 @@ has to be imported and then used in
 ````
 imports: [IonicModule.forRoot(),RouterTestingModule]
 ````
-
-
-
-
-
 
