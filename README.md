@@ -64,7 +64,7 @@ Assuming git is installed
 
     npm test
 
-Otherwise download https://github.com/hhzl/ionic4-start-a5/archive/master.zip und unzip. Then
+Otherwise download the file https://github.com/hhzl/ionic4-start-a5/archive/master.zip and unzip it. Then
 
     cd ionic5-start-a5
 
@@ -84,7 +84,7 @@ To run the application in a web browser execute on the command line
 
     ionic serve
 
-The use the indicated local web address such as http://localhost:8100 .
+Then use the indicated local web address such as http://localhost:8100 .
 
 
 # HOW SCAFFOLDING WAS DONE
