@@ -3,19 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
 
 public items :  Array<any> = [
-   {
-      "_id":18,
-      "word":"fish",
-      "translate":"der Fisch",
-      "translateFR":"le poisson",
-      "translateIT":"il pesce",
-      "tags":"animal",
-      "picture":"fish.jpg",
-      "audio":"En-uk-fish.ogg.mp3"
-   },
    {
       "_id":5,
       "word":"butterfly",
@@ -45,6 +36,16 @@ public items :  Array<any> = [
       "tags":"animal",
       "picture":"dog.jpg",
       "audio":"En-uk-a_dog.ogg.mp3"
+   },
+   {
+      "_id":18,
+      "word":"fish",
+      "translate":"der Fisch",
+      "translateFR":"le poisson",
+      "translateIT":"il pesce",
+      "tags":"animal",
+      "picture":"fish.jpg",
+      "audio":"En-uk-fish.ogg.mp3"
    },
    {
       "_id":20,
