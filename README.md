@@ -19,6 +19,7 @@
 # INSTALLATION OF TOOLS
 
 Make sure the [Node.js and npm](https://nodejs.org/en/) are installed.
+Commands for Linux see https://github.com/nodesource/distributions
 
 Then install ionic and cordova from the command line with:
 
